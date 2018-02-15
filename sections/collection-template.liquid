@@ -77,6 +77,9 @@
                     {% endif %}
                   {% endif %}
                   {% for tag in collection.all_tags %}
+                    {% if tag == 'reward' or tag == 'loyaltylion' %}
+                      {% continue %}
+                    {% endif %}
                     <option value="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
                   {% endfor %}
                 </select>

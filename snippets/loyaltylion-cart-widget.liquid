@@ -1,0 +1,30 @@
+<div class='loyaltylion-redemption-widget-container'>
+  <h2>Redeem your points</h2>
+  {% if customer %}
+    <div class="loyaltylion-redemption-widget__header">
+      <div class="loyaltylion-redemption-widget__lead">
+        You can redeem <span class="loyaltylion-redemption-widget__points" data-lion-points="cart"></span> points
+      </div>
+    </div>
+    <div class='loyaltylion-redemption-widget-rewards'>
+      <div data-lion-seamless-product-reward-widget></div>
+    </div>
+  {% else %}
+    <div class="loyaltylion-redemption-widget__guest">
+      Please <a href='/account/login'>log in</a> or <a href='/account/register'>sign up</a> to redeem points for rewards
+    </div>
+  {% endif %}
+</div>
+
+<script>
+  // LoyaltyLion fires this event any time it adds or removes
+  // an item from cart; as we don't have an Ajax cart we'll
+  // refresh the page instead.
+  //
+  // if you do have an Ajax cart, you'll want to listen to this event
+  // and re-render your cart when it's emitted
+
+  lion.on('cart.changed', function() {
+    window.location.reload()
+  })
+</script>

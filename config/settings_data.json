@@ -2,9 +2,9 @@
   "current": {
     "color_text": "#3d4246",
     "color_body_text": "#788188",
-    "color_sale_text": "#7796A8",
+    "color_sale_text": "#7796a8",
     "color_borders": "#e8e9eb",
-    "color_button": "#7796A8",
+    "color_button": "#7796a8",
     "color_button_text": "#fff",
     "color_small_button": "#fff",
     "color_small_button_text": "#3d4246",
@@ -19,52 +19,129 @@
     "type_base_family": "Google_Work+Sans_400_sans",
     "type_base_size": "16px",
     "type_bold_product_titles": false,
+    "share_image": "",
     "share_facebook": true,
     "share_twitter": true,
     "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_tumblr_link": "",
+    "social_snapchat_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
     "sections": {
       "header": {
         "type": "header",
-        "settings": {}
+        "settings": {
+          "align_logo": "left",
+          "logo": "",
+          "logo_max_width": "100",
+          "main_linklist": "main-menu",
+          "message": false,
+          "home_page_only": true,
+          "message_text": "Announce something here",
+          "message_link": "",
+          "color_bg": "#7796a8",
+          "color_text": "#fff"
+        }
       },
       "hero": {
         "type": "hero",
+        "disabled": true,
         "settings": {
-          "text_size": "large"
+          "image": "",
+          "alignment": "center",
+          "title": "Image with text overlay",
+          "text": "<p>Use overlay text to give your customers insight into your brand. Select imagery and text that relates to your style and story.<\/p>",
+          "hero_size": "medium",
+          "text_size": "large",
+          "button_label": "",
+          "button_link": ""
         }
       },
       "slideshow": {
         "type": "slideshow",
+        "disabled": true,
         "blocks": {
           "slideshow-0": {
             "type": "image",
-            "settings": {}
+            "settings": {
+              "image": "",
+              "alignment": "top",
+              "title": "Image slide",
+              "subheading": "Tell your brand's story through video and images",
+              "link": ""
+            }
           },
           "slideshow-1": {
             "type": "image",
-            "settings": {}
+            "settings": {
+              "image": "",
+              "alignment": "top",
+              "title": "Image slide",
+              "subheading": "Tell your brand's story through video and images",
+              "link": ""
+            }
           }
         },
         "block_order": [
           "slideshow-0",
           "slideshow-1"
         ],
-        "settings": {}
+        "settings": {
+          "autoplay": true,
+          "autoplay_speed": "7000",
+          "slideshow_height": "small",
+          "text_size": "medium"
+        }
       },
       "featured-collections": {
         "type": "collection",
         "settings": {
-          "collection": "frontpage"
+          "title": "Featured collection",
+          "collection": "frontpage",
+          "grid": 3,
+          "rows": 2,
+          "show_vendor": false,
+          "show_view_all": false
         }
       },
       "feature-row": {
         "type": "feature-row",
-        "settings": {}
+        "disabled": true,
+        "settings": {
+          "image": "",
+          "layout": "left",
+          "title": "Image with text",
+          "text": "<p>Pair large text with an image to give focus to your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
       },
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist_two": ""
+          "footer_linklist": "footer",
+          "footer_linklist_two": "",
+          "footer_newsletter_enable": false,
+          "show_payment_icons": false
         }
       }
     },
@@ -356,14 +433,6 @@
             "layout": "grid",
             "blog_show_author": true,
             "blog_show_date": false
-          }
-        },
-        "article-template": {
-          "type": "article-template",
-          "settings": {
-            "blog_show_author": true,
-            "blog_show_date": true,
-            "show_share_buttons": true
           }
         },
         "cart-template": {

@@ -77,6 +77,9 @@
                     {% endif %}
                   {% endif %}
                   {% for tag in collection.all_tags %}
+                    {% if tag == 'reward' or tag == 'loyaltylion' %}
+                      {% continue %}
+                    {% endif %}
                     <option value="/collections/{% if collection.handle != blank %}{{ collection.handle }}{% else %}all{% endif %}/{{ tag | handleize }}"{% if current_tags contains tag %} selected="selected"{% endif %}>{{ tag }}</option>
                   {% endfor %}
                 </select>
@@ -153,6 +156,9 @@
 
       <div class="grid grid--uniform{% if collection.products_count > 0 %} grid--view-items{% endif %}">
         {% for product in collection.products %}
+          {% if product.tags contains 'reward' %}
+            {% continue %}
+          {% endif %}
           <div class="grid__item grid__item--{{section.id}} {{ grid_item_width }}">
             {% include 'product-card-grid', max_height: max_height %}
           </div>

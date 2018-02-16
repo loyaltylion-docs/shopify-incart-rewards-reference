@@ -5821,3 +5821,182 @@ $toolbar-height-small: 46px;
   font-size: em(floor($font-size-base * 0.88));
 }
 
+/*================ LoyaltyLion ================*/
+
+$color-grey: #e8e9eb;
+
+.cart-with-rewards {
+  display: flex;
+}
+
+.cart-with-rewards__cart {
+  flex-grow: 1;
+  border-right: 1px solid $color-grey;
+  padding-right: 2em;
+}
+
+.cart-with-rewards__widget {
+  padding-left: 2em;
+  width: 300px;
+}
+
+.loyaltylion-redemption-widget-container {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+
+  & > h2 {
+    margin-bottom: 3px;
+  }
+}
+
+.loyaltylion-redemption-widget--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.loyaltylion-redemption-widget__header {
+  background-color: #fff;
+  padding: 13px 0;
+}
+
+.loyaltylion-redemption-widget__guest {
+  padding-top: 2em;
+
+  & > a {
+    text-decoration: underline;
+  }
+}
+
+.loyaltylion-redemption-widget__points {
+  font-weight: bold;
+}
+
+.loyaltylion-redemption-widget__lead {
+  margin-bottom: 0;
+  position: relative;
+}
+
+.loyaltylion-redemption-widget-rewards {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  border-color: $color-grey;
+  background-color: #fcfcfc;
+  position: relative;
+  overflow: hidden;
+  max-height: 300px;
+  transition: max-height 0.15s ease-in-out;
+}
+
+.loyaltylion-redemption-widget-rewards--hidden {
+  max-height: 0;
+}
+
+.loyaltylion-redemption-widget__navigator {
+  display: block;
+  position: absolute;
+  border-radius: 100%;
+  width: 30px;
+  height: 30px;
+  line-height: 24px;
+  font-size: 42px;
+  color: #333;
+  top: 50%;
+  margin-top: -15px;
+}
+
+.loyaltylion-redemption-widget__navigator--hidden {
+  display: none;
+}
+
+.loyaltylion-redemption-widget__navigator--back {
+  left: -5px;
+}
+
+.loyaltylion-redemption-widget__navigator--forward {
+  right: -5px;
+}
+
+.loyaltylion-redemption-widget__rewards-slider {
+  display: flex;
+  position: relative;
+  transition: left 0.25s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.loyaltylion-product-reward {
+  flex: 0 0 100%;
+  flex-basis: 100%;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.loyaltylion-product-reward__picture img {
+  height: 100px;
+  box-shadow: 0px 0px 14px 0px rgba(201, 201, 201, 0.3);
+  margin-bottom: 5px;
+}
+
+.loyaltylion-product-reward__cost {
+  margin-bottom: 12px;
+  display: none;
+}
+
+.loyaltylion-product-reward__name {
+  font-weight: bold;
+  margin-bottom: 15px;
+  font-size: 110%;
+  flex-grow: 1;
+}
+
+.loyaltylion-product-reward__variant-selector {
+  display: none;
+}
+
+/* loading spinner for the button */
+
+@keyframes redemption-widget-spinner {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loyaltylion-product-reward__button[data-lion-working] {
+  position: relative;
+  color: transparent;
+}
+
+.loyaltylion-product-reward__button[data-lion-working]:before {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 20px;
+  height: 20px;
+  margin-top: -10px;
+  margin-left: -10px;
+  border-radius: 50%;
+  border-top: 2px solid #fff;
+  border-right: 2px solid transparent;
+  animation: redemption-widget-spinner .7s linear infinite;
+}
+
+@media only screen and (max-width: 650px) {
+  .cart-with-rewards {
+    display: block;
+  }
+
+  .cart-with-rewards__cart {
+    padding-right: 0;
+    border-right: none;
+    border-bottom: 1px solid $color-grey;
+    padding-bottom: 2em;
+  }
+
+  .cart-with-rewards__widget {
+    padding-left: 0;
+    padding-top: 2em;
+    width: 100%;
+  }
+}

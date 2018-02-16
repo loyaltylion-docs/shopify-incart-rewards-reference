@@ -42,6 +42,9 @@
   {% endif %}
   <div class="page-width list-view-items">
     {% for item in search.results %}
+      {% if item.tags contains 'reward' %}
+        {% continue %}
+      {% endif %}
       <a href="{{ item.url }}" class="list-view-item">
         {% if item.object_type == 'product' %}
           {% include 'product-card-list', product: item %}

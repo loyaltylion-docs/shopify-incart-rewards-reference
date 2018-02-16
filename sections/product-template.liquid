@@ -138,6 +138,7 @@
             {% endif %}
           </p>
 
+          {% unless product.tags contains 'reward' %}
           <form action="/cart/add" method="post" enctype="multipart/form-data" class="product-form product-form-{{ section.id }}{% unless section.settings.show_variant_labels %} product-form--hide-variant-labels{% endunless %}" data-section="{{ section.id }}">
             {% unless product.has_only_default_variant %}
               {% for option in product.options_with_values %}
@@ -185,6 +186,7 @@
               </button>
             </div>
           </form>
+          {% endunless %}
 
         </div>
 

@@ -108,4 +108,12 @@ The `product.id` should be the id of a product for which there is a correspondin
 
 When the LoyaltyLion SDK loads, it'll look for these buttons, match them up with the corresponding reward and set the text of the button and add the redemption functionality on click.
 
+Note - if your reward products have multiple variants, you will need to provide a `variant_id` as well in order to effectively identify the reward to be claimed. You can do this by providing the `variant_id` in a `data-variant-id` attribute to the button element above like so:
+
+```html
+{% for variant in product.variants %}
+  <a href='#' data-lion-seamless-product-reward='{{ product.id }}' data-variant-id='{{ variant.id }}' class='btn'></a>
+{% endfor %}
+```
+
 You can find out more about using the standalone buttons in our docs here: https://loyaltylion.com/docs/seamless-product-rewards#advanced
